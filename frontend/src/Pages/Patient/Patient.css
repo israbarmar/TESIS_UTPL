@@ -1,0 +1,70 @@
+
+.main-container-patient{
+    height: 100vh;
+    background-image: url(../../images/vista_paciente.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.abs_patient_div{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.main-data_patient{
+  padding: 0.5em;
+    color: white;
+    background-color: #679EF5;
+}
+
+
+.container_patient{
+    height: 100vh;
+    background-image: url(../../images/appointment_patient.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.apm_patient{
+    background-color: #F5F0ED;
+    opacity: 0.95;
+    margin: auto;
+    height: 80vh;
+    width: 80%;
+    padding: 1em;
+    margin-top: 7em;
+}
+
+.apm_h1{
+    margin-top: 2em;
+}
+
+.container-aPatient{
+    height: 100vh;
+    background-image: url(../../images/paciente.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.add-patient{
+    background-color: #CED4D0;
+    opacity: 0.95;
+    margin: auto;
+    height: 80vh;
+    width: 50%;
+}
+
+.container-patient{
+    position: relative;
+    padding: 1.5em;
+    width: 100%;
+    height: 100%;
+}
+
+.b_add{
+    position: absolute;
+    bottom: 10px;
+}
