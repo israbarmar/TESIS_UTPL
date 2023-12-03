@@ -42,7 +42,7 @@ function AddPatient() {
         const doctor = await contract.methods.get_doctor(accounts[0]).call({ from: accounts[0] });
         setName(doctor[1]);
       } else {
-        window.alert("Smart contract not deployed to detected network.");
+        window.alert("Contrato inteligente no ha sido desplegado en la red detectada.");
       }
     }
 
@@ -97,7 +97,7 @@ function AddPatient() {
     let dlist = await contract.methods.get_existing_id_patients().call({ from: account });
 
     if (dlist.includes(id_patient.toString())) {
-      window.alert("Patient Already Exists");
+      window.alert("El paciente ya existe");
       e.target.reset();
       setIdPatient(0);
       setPname("");

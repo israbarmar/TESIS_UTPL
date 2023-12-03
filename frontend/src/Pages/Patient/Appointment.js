@@ -70,7 +70,7 @@ function Appointment() {
         var year = splitDate[0];
         var month = splitDate[1];
         var day = splitDate[2]; 
-        // console.log(day + '-' + month + '-' + year);
+        console.log(day + '-' + month + '-' + year);
         setDate(day + '-' + month + '-' + year);
     };
 
@@ -82,7 +82,7 @@ function Appointment() {
         if(doctor[1]==="") window.alert('El médico no existe')
         else {
             await appointmentContract.methods.request_appointment(patient[0],doctor[1],date,addr).send({ from: account }).then((r) => {
-                console.log("Request sent");
+                console.log("Solicitud enviada");
             })
             const requests = await appointmentContract.methods.patient_get_pending_requests().call({ from: account });
             setRequests(requests)
@@ -102,7 +102,7 @@ function Appointment() {
 
     const cancelConfirmed = async (index) => {
         await appointmentContract.methods.patient_cancel_confirmed_appointment(index).send({ from: account }).then((r) => {
-            console.log("Cancelled Appointment");
+            console.log("Cancelar Consulta");
         })
         const confirmed = await appointmentContract.methods.patient_get_confirmed_appointments().call({ from: account });
         setConfirmed(confirmed)

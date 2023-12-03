@@ -23,7 +23,7 @@ function Patient() {
           const patient = await contract.methods.get_patient(accounts[0]).call({ from: accounts[0] });
           setName(patient[0]);
         } else {
-          window.alert('Smart contract not deployed to detected network.')
+          window.alert('Contrato inteligente no ha sido desplegado en la red detectada.')
         }
       }
       

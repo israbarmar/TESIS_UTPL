@@ -35,7 +35,7 @@ function Login() {
         const contract = new web3.eth.Contract(Cont.abi, networkData.address);
         setContract(contract);
       } else {
-        window.alert('Smart contract not deployed to detected network.')
+        window.alert('Contrato inteligente no ha sido desplegado en la red detectada.')
       }
     }
     
@@ -54,7 +54,7 @@ function Login() {
     const pass = await contract.methods.getPassword().call({ from: account });
 
     if(pass==="") {
-      setAlertMsg("Address not found");
+      setAlertMsg("Address no encontrada");
       setShowAlert(true);
     }
     else if(pass===password) {
@@ -74,7 +74,7 @@ function Login() {
       }
     }
     else {
-      setAlertMsg("Invalid Password");
+      setAlertMsg("Contraseña incorrecta");
       setShowAlert(true);
     }
     setPassword("");

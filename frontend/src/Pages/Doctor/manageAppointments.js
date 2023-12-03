@@ -84,7 +84,7 @@ function ManageAppointments() {
 
   const handleConfirm = async (index) => {
     if (time === "") {
-      window.alert("Select time");
+      window.alert("Seleccione la hora");
       return;
     }
     let req = requests[index];
@@ -99,10 +99,10 @@ function ManageAppointments() {
     if (success) {
       const pat = await healthContract.methods.get_patient(req[2]).call({ from: account });
       let templateParams = {
-        subject: "Appointment Confirmation",
+        subject: "Solicitud de consulta médica: aprobada",
         pat_name: req[3],
         pat_email: pat[2],
-        message: "Your appointment with " + req[5] + " is confirmed on " + req[0] + " at " + time,
+        message: "Su consulta con " + req[5] + " está confirmado para el día " + req[0] + " a las " + time,
       };
       console.log(templateParams);
 
@@ -143,10 +143,10 @@ function ManageAppointments() {
     if (success) {
       const pat = await healthContract.methods.get_patient(req[2]).call({ from: account });
       let templateParams = {
-        subject: "Appointment request rejected",
+        subject: "Solicitud de la consulta médica: rechazada",
         pat_name: req[3],
         pat_email: pat[2],
-        message: "Your appointment request with " + req[5] + " for " + req[0] + " is rejected. Reason : " + reason,
+        message: "Su consulta con " + req[5] + " para el día " + req[0] + " fue rechazado. Razón : " + reason,
       };
       console.log(templateParams);
 
@@ -185,11 +185,11 @@ function ManageAppointments() {
     if (success) {
       const pat = await healthContract.methods.get_patient(conf[2]).call({ from: account });
       let templateParams = {
-        subject: "Appointment cancelled",
+        subject: "Solicitud de consulta médica: cancelada",
         pat_name: conf[3],
         pat_email: pat[2],
         message:
-          "Your appointment with " + conf[5] + " on " + conf[0] + " " + conf[1] + " is cancelled. Reason : " + reason,
+          "Su consulta con " + conf[5] + " a las " + conf[0] + " " + conf[1] + " ha sido cancelada. Razón : " + reason,
       };
       console.log(templateParams);
 
