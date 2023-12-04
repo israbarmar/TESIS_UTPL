@@ -105,9 +105,9 @@ function AddPatient() {
       setPAge(0);
       return;
     }
-    // pPass=Math.floor(100000 + Math.random() * 900000).toString();
+    
     pPass = generatePassword().toString();
-    // console.log(pPass);
+    console.log(pPass);
     await contract.methods
       .add_patient(id_patient.toString(), pName, pEmail, pAge, pPass)
       .send({ from: account })

@@ -33,12 +33,12 @@ contract Health {
     string[] id_patient;
 
     string[2] private_keys = [
-        "0x67a343a5daa0350c3430925f0db8cc59294c9785f7cf2ff56e8f7fa218801ed6",
-        "0xfdcb40cc0281114f322a53fd23da4929b14b5b7c4f9badaf0cde9bbadd1e9517"
+        "0xc63edcdc44deb28bd5ca939d155bd3a66742127d832d9712514de8d289e59579",
+        "0x182e46a68b04c65b13a1f2595efb3eb266a8ad456b348f2c230e1b896fbd1e80"
     ];
     address[2] addresses = [
-        0xfF4980dC904f5b4f092922932e941598ECEc64b4,
-        0xC19AB23c7e176C4Fc9cAd15C04B1b65fdEcfF17c
+        0xB0e91ECD3c04A62D3E11140e2cE37dD3d7c5622a,
+        0x79748c0AFA2B29D06862aD9035c1c80540698EF5
     ];
 
     // variable para llevar la cuenta de pacientes y médicos
