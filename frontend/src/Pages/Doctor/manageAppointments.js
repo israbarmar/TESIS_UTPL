@@ -146,7 +146,7 @@ function ManageAppointments() {
         subject: "Solicitud de la consulta médica: rechazada",
         pat_name: req[3],
         pat_email: pat[2],
-        message: "Su consulta con " + req[5] + " para el día " + req[0] + " fue rechazado. Razón : " + reason,
+        message: "Su consulta con " + req[5] + " para el día " + req[0] + " fue rechazado. Motivo : " + reason,
       };
       console.log(templateParams);
 
@@ -189,7 +189,7 @@ function ManageAppointments() {
         pat_name: conf[3],
         pat_email: pat[2],
         message:
-          "Su consulta con " + conf[5] + " a las " + conf[0] + " " + conf[1] + " ha sido cancelada. Razón : " + reason,
+          "Su consulta con " + conf[5] + " a las " + conf[0] + " " + conf[1] + " ha sido cancelada. Motivo : " + reason,
       };
       console.log(templateParams);
 
