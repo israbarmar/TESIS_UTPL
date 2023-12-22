@@ -21,7 +21,7 @@
     "web3": "^1.9.0"
   },
   "scripts": {
-    "start": "node --max-old-space-size=512 npm start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
