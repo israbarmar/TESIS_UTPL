@@ -212,7 +212,6 @@ contract Health {
         arr = PATIENTS[patientAddr].doctorAccessList;
         remove_element_from_array(arr, doctorAddr);
 
-        // payable(msg.sender).transfer(2 ether);
     }
 
     function remove_element_from_array(
