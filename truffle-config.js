@@ -10,7 +10,7 @@ module.exports = {
     goerli: {
       provider: function() {
         return new HDWalletProvider(
-          'cute roast post exhaust tag task shaft dawn axis scissors arm toy', 
+          '0f076052cb93d4a0851ba051091a4841290e5e633a4399a52072bde48e69537d',
           'https://goerli.infura.io/v3/3461df230aa74ec9a0b6ef606e79906f' 
         );
       },
