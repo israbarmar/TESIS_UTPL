@@ -1,5 +1,8 @@
-
+import { BsClipboard2Data }from "react-icons/bs";
+// import { GiStethoscope }from "react-icons/gi";
 import { TbStethoscope }from "react-icons/tb";
+import { MdOutlineManageAccounts }from "react-icons/md";
+import { FaUserCircle }from "react-icons/fa";
 import { BiLogOut }from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
@@ -11,9 +14,19 @@ function PatientSideBar(props) {
 
     const menuItem=[
         {
+            path:"/myrecords",
+            name:"Mis historias clinicas",
+            icon:<BsClipboard2Data />
+        },
+        {
             path:"/appointment",
             name:"Consultas",
             icon:<TbStethoscope />
+        },
+        {
+            path:"/manageaccess",
+            name:"Otorgar acceso",
+            icon:<MdOutlineManageAccounts />
         }
     ]
 

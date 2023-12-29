@@ -228,18 +228,19 @@ function ManageAppointments() {
 
   return (
     <>
-    <div className="absolute_div">
+      <div className="container-appointment">
+
+      <div className="header_menu">
       <DoctorSideBar />
       </div>
-      <div className="container-appointment">
+      
+      <div className='container_apm'>
         <div className="apm-doctor">
-          <div>
-            <h1 style={{ fontVariant: "small-caps" }}>Consultas</h1>
-          </div>
-          <center>
+            
+        <div className="req_app">
+        <h1 style={{ fontVariant: "small-caps" }}>Consultas</h1>
             <h4 style={{ fontVariant: "small-caps" }}>Peticiones</h4>
-          </center>
-          <div className="table" style={{ height: "200px", marginTop: "0px" }}>
+          <div className="table">
             {showTable ? (
               <>
                 <Table striped bordered hover>
@@ -286,7 +287,7 @@ function ManageAppointments() {
                 </Table>
               </>
             ) : (
-              <center style={{ fontStyle: "italic", marginTop: "10px" }}>Sin Peticiones</center>
+              <p style={{fontStyle: "italic"}}>Sin Peticiones</p>
             )}
           </div>
 
@@ -317,11 +318,11 @@ function ManageAppointments() {
               )}
             </Modal.Footer>
           </Modal>
+          </div>
 
-          <center>
-            <h4 style={{ fontVariant: "small-caps", marginTop: "20px" }}>Confirmados</h4>
-          </center>
-          <div className="table" style={{ height: "200px", marginTop: "0px" }}>
+          <div className='app_accepted'>
+            <h4 style={{fontVariant: "small-caps"}}>Confirmados</h4>
+          <div className="table">
             {showConfirm ? (
               <>
                 <Table striped bordered hover>
@@ -365,10 +366,12 @@ function ManageAppointments() {
                 </Table>
               </>
             ) : (
-              <center style={{ fontStyle: "italic", marginTop: "10px" }}>Sin consultas confirmadas</center>
+              <p style={{ fontStyle: "italic"}}>Sin consultas confirmadas</p>
             )}
           </div>
         </div>
+        </div>
+      </div>
       </div>
     </>
   );

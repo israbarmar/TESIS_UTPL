@@ -14,7 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
 }
   .LoginContainer {
     font-size: larger;
@@ -22,4 +23,9 @@
     /* background-color: white; */
     padding: 2em;
     min-width: 60vh;
+  }
+
+  .title_name{
+    text-align: center;
+    width: 100%;
   }

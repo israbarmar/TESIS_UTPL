@@ -63,10 +63,6 @@ function Login() {
         localStorage.setItem('account',account);
         localStorage.setItem('role','Patient');
         navigate("/home");
-      } else if(Number(role)===2) {
-        localStorage.setItem('account',account);
-        localStorage.setItem('role','Pharmacy');
-        navigate("/pharmacy");
       } else {
         localStorage.setItem('account',account);
         localStorage.setItem('role','Doctor');
@@ -80,13 +76,15 @@ function Login() {
     setPassword("");
   };
 
-
-
   return (
      <div className='Login_box'>
       <div className="LoginContainer">
         <div className="LoginContents">
-        <center><h3 style={{color : '#2874A6', paddingBottom : '10px'}}>Login</h3></center>
+
+          <div className='title_name'>
+            <h3 style={{color : '#2874A6'}}>Login</h3>
+        </div>
+
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-4 mt-4" controlId="formBasicEmail">
                 <Form.Label>
@@ -95,7 +93,7 @@ function Login() {
                 </Form.Label>
                 <Form.Control type="text" placeholder={account} disabled/>
                 <Form.Text className="text-muted">
-                <span style={{marginLeft : '15px'}}>Ingrese la dirección enlazada a Metamask</span>
+                <span>Ingrese la dirección enlazada a Metamask</span>
                 </Form.Text>
             </Form.Group>
 
@@ -107,7 +105,7 @@ function Login() {
                 <Form.Control type="password" placeholder="Password" onChange={updateText}/>
             </Form.Group>
             {showAlert?
-            <Alert variant="danger"><BiError size={20}/><span style={{marginLeft : '10px'}}>{alertMsg}</span></Alert>
+            <Alert variant="danger"><BiError size={20}/><span>{alertMsg}</span></Alert>
             :
             <div style={{height : '25px'}}></div>}
             <div className="d-grid mx-5 mt-4">

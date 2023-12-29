@@ -1,5 +1,8 @@
+import { BsClipboard2Data }from "react-icons/bs";
 import { TbCalendarTime }from "react-icons/tb";
+import { HiOutlineDocumentAdd }from "react-icons/hi";
 import { BsPersonAdd }from "react-icons/bs";
+import { FaUserCircle }from "react-icons/fa";
 import { BiLogOut }from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
@@ -19,7 +22,17 @@ function DoctorSideBar(props) {
             path:"/addpatient",
             name:"Añadir Paciente",
             icon:<BsPersonAdd />
-        }
+        },
+        {
+            path:"/viewrecords",
+            name:"Ver Historias Clinicas",
+            icon:<BsClipboard2Data />
+        },
+        {
+            path:"/addrecords",
+            name:"Añadir Historias Clinicas",
+            icon:<HiOutlineDocumentAdd />
+        },
     ]
 
     const handleSubmit = (e) => {
@@ -29,7 +42,7 @@ function DoctorSideBar(props) {
     };
 
     return (
-            <div className="sidebar_contents">
+            <div className="sidebar_contents_doctor">
            {
                menuItem.map((item, index)=>(
                    

@@ -7,6 +7,7 @@ import { BiErrorCircle } from "react-icons/bi";
 import Cont from "../../abis/Health.json";
 import Web3 from "web3";
 import { useNavigate } from "react-router-dom";
+import './Doctor.css';
 
 function AddPatient() {
   const [account, setAccount] = useState();
@@ -147,25 +148,26 @@ function AddPatient() {
 
   return (
     <>
-    <div className="absolute_div">
+
+    <div className="header_menu">
       <DoctorSideBar />
       </div>
+
       <div className="container-aPatient">
+
         <div className="add-patient">
         <div className="container-patient">
           <div> 
             <h1 style={{ fontVariant: "small-caps" }}>Añadir Paciente</h1>
           </div>
           <div>
-            <Form onSubmit={handleSubmit}>
-              <center>
+            <Form onSubmit={handleSubmit}>  
                 <h3 style={{ fontVariant: "small-caps" }}>Detalles del paciente</h3>
-              </center>
               <Form.Group className="mb-3" controlId="formBasicId">
                 <Form.Label>N° Cédula</Form.Label>
                 <Form.Control type="number" placeholder="" onChange={updateIdPatient} />
                 {errors.id_patient === "t" ? (
-                  <span style={{ color: "red", fontSize: "12px", marginLeft: "8px" }}>
+                  <span style={{ color: "red", fontSize: "12px"}}>
                     {" "}
                     <BiErrorCircle /> La n° de cédula debe tener 10 dígitos
                   </span>
@@ -178,7 +180,7 @@ function AddPatient() {
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control type="text" autoComplete="off" placeholder="Enter name" onChange={updateName} />
                 {errors.name === "t" ? (
-                  <span style={{ color: "red", fontSize: "12px", marginLeft: "8px" }}>
+                  <span style={{ color: "red", fontSize: "12px" }}>
                     {" "}
                     <BiErrorCircle /> Ingrese un nombre válido
                   </span>
@@ -191,7 +193,7 @@ function AddPatient() {
                 <Form.Label>E-mail</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" onChange={updateEmail} />
                 {errors.email === "t" ? (
-                  <span style={{ color: "red", fontSize: "12px", marginLeft: "8px" }}>
+                  <span style={{ color: "red", fontSize: "12px"}}>
                     {" "}
                     <BiErrorCircle /> Ingrese un e-mail válido
                   </span>
@@ -204,7 +206,7 @@ function AddPatient() {
                 <Form.Label>Edad</Form.Label>
                 <Form.Control type="number" placeholder="" onChange={updateAge} />
                 {errors.age === "t" ? (
-                  <span style={{ color: "red", fontSize: "12px", marginLeft: "8px" }}>
+                  <span style={{ color: "red", fontSize: "12px"}}>
                     {" "}
                     <BiErrorCircle /> Ingrese una edad válida
                   </span>
@@ -221,6 +223,7 @@ function AddPatient() {
           </div>
         </div>
       </div>
+      
     </div>
     </>
   );

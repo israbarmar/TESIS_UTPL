@@ -8,12 +8,22 @@ contract Health {
         uint categ;
     }
 
-    struct patient {
+   struct record {
+        string date;
+        address doctor;
+        string diagnosis;
+        string description;
+        string prescription;
+        string[] files;
+    }
+
+   struct patient {
         string id_patient;
         string name;
         string email;
         uint age;
         address[] doctorAccessList;
+        mapping(uint => record) recordMap;
         uint recordSize;
     }
 
@@ -33,12 +43,12 @@ contract Health {
     string[] id_patient;
 
     string[2] private_keys = [
-        "0xc63edcdc44deb28bd5ca939d155bd3a66742127d832d9712514de8d289e59579",
-        "0x182e46a68b04c65b13a1f2595efb3eb266a8ad456b348f2c230e1b896fbd1e80"
+        "0x6d885a878544c82422a66f33d6dd2b305fdccfb47e33b6fac88165a0db88984b",
+        "0x958f1c2d7de0b534b08d9279afb6f4c267058496607baef6c2463037369b0b34"
     ];
     address[2] addresses = [
-        0xB0e91ECD3c04A62D3E11140e2cE37dD3d7c5622a,
-        0x79748c0AFA2B29D06862aD9035c1c80540698EF5
+        0x8C4be0de91F3B964569348E0db7b9C113a2dcdB7,
+        0x37d3FCF35FEDe5D46340797E703B41CDF6ae1465
     ];
 
     // variable para llevar la cuenta de pacientes y médicos
@@ -80,12 +90,6 @@ contract Health {
         DOCTORS[_addr].specialization = _special;
         DOCTORS[_addr].name = _name;
         DOCTORS[_addr].age = _age;
-    }
-
-    function add_pharmacy(address _addr, string memory _password) public {
-        USERS[_addr].addr = _addr;
-        USERS[_addr].password = _password;
-        USERS[_addr].categ = 2;
     }
 
     function add_patient(
@@ -158,12 +162,12 @@ contract Health {
             USERS[_addr].addr == msg.sender,
             "No puede acceder a esta cuenta"
         );
-        // comprobar si la contraseña almacenada y la introducida coinciden
+        // comprobar si la contraseña almacenada y la escrita coinciden
         require(
             compare(USERS[_addr].password, _password),
             "La contrasena no coincide"
         );
-        // devolver categoría del usuario
+        // devolver la categoría del usuario
         return USERS[_addr].categ;
     }
 
@@ -218,7 +222,7 @@ contract Health {
         address[] storage arr,
         address addr
     ) private {
-        // buscar el índice de esta dirección en la matriz
+        // buscar el índice de esta dirección en el arreglo
         bool found = false;
         uint target_index = 0;
         for (uint j = 0; j < arr.length; j++) {
@@ -228,7 +232,7 @@ contract Health {
                 break;
             }
         }
-        // si no se encuentra, se revierte
+        // si no se encuentra, la acción se revierte
         if (!found) revert("Direccion no encontrada en la lista");
         else {
             if (arr.length == 1) arr.pop();
@@ -247,6 +251,41 @@ contract Health {
     function get_accessible_patients() public view returns (address[] memory) {
         address addr = msg.sender;
         return DOCTORS[addr].patientAccessList;
+    }
+
+    /* MÓDULO DE INTERCAMBIO DE DATOS */
+
+    function add_patient_record(
+        address patientAddr,
+        string memory _date,
+        string memory _diagnosis,
+        string memory _description,
+        string memory _prescription,
+        string[] memory _files
+    ) public {
+        patient storage p = PATIENTS[patientAddr];
+
+        p.recordMap[p.recordSize] = record(
+            _date,
+            msg.sender,
+            _diagnosis,
+            _description,
+            _prescription,
+            _files
+        );
+        p.recordSize++;
+    }
+
+    function get_patient_records(
+        address patientAddr
+    ) public view returns (record[] memory) {
+        record[] memory records = new record[](
+            PATIENTS[patientAddr].recordSize
+        );
+        for (uint k = 0; k < PATIENTS[patientAddr].recordSize; k++) {
+            records[k] = PATIENTS[patientAddr].recordMap[k];
+        }
+        return records;
     }
     
 }

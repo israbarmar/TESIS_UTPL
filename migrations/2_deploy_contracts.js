@@ -8,7 +8,7 @@ module.exports = async function(deployer) {
 
   // Añadir un nuevo médico
   await healthInstance.add_doctor(
-    '0x54bb3877C487261c66cc894662De68746a016c05',
+    '0xE4e7337e8b1f3d8263352Ce18B448DD90Dada7B2',
     'Bivianne Soledad Marquez',
     'Clinica Privada',
     'Médico General',

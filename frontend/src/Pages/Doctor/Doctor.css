@@ -20,35 +20,89 @@
 }
 
 .container-appointment{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../images/consulta.jpg);
     background-size: cover;
     background-position: center;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+
+.container_apm{
+    height: 100%;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .apm-doctor{
+    overflow: scroll;
     background-color: #EEEDEB;
     opacity: 0.95;
-    margin: auto;
-    height: 80vh;
-    width: 80%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    width: 80vw;
     padding: 1em;
+    height: 80vh;
 }
 
+.container-appointment p, .container-appointment h4{
+    text-align: center;
+}
+
+.apm-doctor::-webkit-scrollbar, .table::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.apm-doctor::-webkit-scrollbar:vertical, .table::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.apm-doctor::-webkit-scrollbar-button:increment,.apm-doctor::-webkit-scrollbar-button,
+.table::-webkit-scrollbar-button:increment, table::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.apm-doctor::-webkit-scrollbar:horizontal,
+.table::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.apm-doctor::-webkit-scrollbar-thumb,
+.table::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.apm-doctor::-webkit-scrollbar-track,
+.table::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.table{
+    margin-top: 1em;
+    background-color: rgb(243, 243, 243);
+    overflow: scroll;
+}
+
+/*AÑADIR PACIENTE*/
+
 .container-aPatient{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../images/paciente.png);
     background-size: cover;
     background-position: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .add-patient{
     background-color: #CED4D0;
     opacity: 0.95;
-    margin: auto;
-    height: 80vh;
     width: 50%;
 }
 
@@ -59,7 +113,42 @@
     height: 100%;
 }
 
-.b_add{
-    position: absolute;
-    bottom: 10px;
+/*AÑADIR HISTORIAS CLINICAS*/
+
+.main-container-addRecord{
+    background-image:url(../../images/health_records.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-body-addRecord{
+    background-color: #ffffff;
+    width: 70%;
+    opacity: 0.95;
+    padding: 1em;
+    border: 1px solid rgb(207, 207, 207);
+}
+
+/*VER HISTORIAS CLINICAS*/
+
+.main-body-mRecords{
+    background-color: #f1c668;
+    opacity: 0.85;
+    opacity: 0.80;
+    padding: 1em;
+    width: 50%;
+}
+
+.main-container-mRecords{
+    background-image: url(../../images/medical_records.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

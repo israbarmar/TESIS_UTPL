@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import DoctorSideBar from "../../Components/doctorSideBar";
-import '../container.css'
 import Web3 from 'web3';
 import Cont from '../../abis/Health.json';
 import './Doctor.css';

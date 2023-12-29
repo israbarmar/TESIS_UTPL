@@ -1,15 +1,9 @@
 
 .main-container-patient{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../images/vista_paciente.jpg);
     background-size: cover;
     background-position: center;
-}
-
-.abs_patient_div{
-    position: absolute;
-    top: 0;
-    width: 100%;
 }
 
 .main-data_patient{
@@ -18,53 +12,107 @@
     background-color: #679EF5;
 }
 
-
 .container_patient{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../images/appointment_patient.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .apm_patient{
     background-color: #F5F0ED;
     opacity: 0.95;
-    margin: auto;
     height: 80vh;
     width: 80%;
     padding: 1em;
-    margin-top: 7em;
+    overflow: scroll;
+}
+
+.apm_patient::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.apm_patient::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.apm_patient::-webkit-scrollbar-button:increment,.apm_patient::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.apm_patient::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.apm_patient::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.apm_patient::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }
 
 .apm_h1{
     margin-top: 2em;
 }
 
-.container-aPatient{
-    height: 100vh;
-    background-image: url(../../images/paciente.png);
-    background-size: cover;
+/*Mis historias clinicas*/
+.main-container-records{
+    background-image:url(../../images/mis_historias.jpg);
     background-position: center;
+    background-size: cover;
+    min-height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.add-patient{
-    background-color: #CED4D0;
-    opacity: 0.95;
-    margin: auto;
-    height: 80vh;
+.main-container-access{
+    background-image:url(../../images/acesss.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-body-records, .main-body-access{
+    background-color: antiquewhite;
+    opacity: 0.80;
+    padding: 1em;
     width: 50%;
 }
 
-.container-patient{
-    position: relative;
-    padding: 1.5em;
-    width: 100%;
-    height: 100%;
+.main-body-records{
+    width: 80%;
 }
 
-.b_add{
-    position: absolute;
-    bottom: 10px;
+.main-body-access{
+    background-color:#77D5CB;
+    opacity: 0.70;
+    width: 40%;
 }
+
+/*OTORGAR ACCESO*/
+.contents_access{
+    display: grid;
+    grid-template-columns: 5fr, auto;
+}
+
+.confirm_box{
+    width: 100%;
+    display: block;
+    background-color: #e4e4e4;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+

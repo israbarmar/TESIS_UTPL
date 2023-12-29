@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import PatientSideBar from "../../Components/patientSideBar";
-import '../container.css'
 
 import Web3 from 'web3';
 import Cont from '../../abis/Health.json'
@@ -32,9 +31,6 @@ function Patient() {
 
     return (
       <>
-      <div className='main-container-patient'>
-        </div>
-
         <div className='abs_patient_div'>
           <div className='main-data_patient'>
             <h1>Cuenta paciente</h1>
@@ -46,6 +42,8 @@ function Patient() {
           </div>
 
         </div> 
+        <div className='main-container-patient'>
+        </div>
       </>
     );
 }

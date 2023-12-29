@@ -142,8 +142,8 @@ function Appointment() {
                     
                     {showTable?
                     <>
-                    <center><h4  style={{fontVariant : 'small-caps'}} className="apm_h1">Peticiones</h4></center>
-                    <div className="table" style={{height : '150px', marginTop : '0px'}}>
+                    <h4  style={{fontVariant : 'small-caps'}} className="apm_h1">Peticiones</h4>
+                    <div className="table">
                     <Table striped bordered hover>
                         <thead>
                             <tr>
@@ -177,8 +177,8 @@ function Appointment() {
 
                     {showConfirm?
                     <>
-                    <center><h4  style={{fontVariant : 'small-caps', marginTop : '20px'}}>Confirmado</h4></center>
-                    <div className="table" style={{height : '150px'}}>
+                   <h4  style={{fontVariant : 'small-caps'}}>Confirmado</h4>
+                    <div className="table">
                     <Table striped bordered hover>
                         <thead>
                             <tr>
