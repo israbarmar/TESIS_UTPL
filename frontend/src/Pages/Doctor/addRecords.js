@@ -110,7 +110,7 @@ function AddRecords() {
         let url = [];
         if (file != null) {
           const created = await client.add(file);
-          const fileUrl = `https://smarthealth.infura-ipfs.io/ipfs/${created.path}`;
+          const fileUrl = `https://utplehr.infura-ipfs.io/ipfs/${created.path}`;
           url.push(fileUrl);
           console.log(url);
         }
