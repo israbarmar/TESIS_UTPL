@@ -1,0 +1,19 @@
+Instrucciones para utilizar el prototipo 'Módulo de gestión de hsitorias clínicas'.
+
+1. Es necesario tener instalado Ganache, Truffle, React y la extensión del navegador Metamask.
+2. Se debe crear una red personal en Metamask.
+3. Ganache y Metamask deben tener los mismos datos en la parte de la configuración del servidor. host: 127.0.0.1 y port: 7545.
+
+Descargar el proyecto del repositorio
+
+4. Cambiar la información del servicio de Infura según los datos propios del usuario, esto en el archivo addRecords.js. Línea 17 y 18. 
+En la línea 113 se debe cambiar también el hash con el ‘gateway’ dedicado propio del usuario.
+5. Cambiar la información del servicio de EmailJs según los datos propios del usuario, esto en el archivo addPaciente.js en la línea 133, en el archivo manageAppointments.js en las líneas 109, 153 y 196, y en el archivo viewRecords.js en la línea 81.
+6. Con las cuentas proporcionadas por Ganache, reemplazar las dos cuentas que se encuentran en Health.sol. línea 46 y 47 para las claves privadas, y líneas 50 y 51 para las direcciones de las cuentas.
+7. Con otra cuenta proporcionada por Ganache, reemplazar la cuenta que se utilizará para el médico en el archivo 2_deploy_contracts.js. Reemplaza el valor de la línea 11 con la dirección de la cuenta escogida. 
+Esta misma cuenta tiene que ser importada en Metamask para ingresar al prototipo con la dirección y la clave privada.
+La clave para ingresar al prototipo como el médico es ‘Doctora’.
+8. Ingresar a la carpeta del proyecto, abrir la consola e ingresar el comando truffle migrate --reset. Este paso tiene que realizarse con Ganache abierto.
+9. Copiar los archivos .json que se encuentran en la carpeta build/contracts a la carpeta frontend/src/abis.
+10. Entrar a la carpeta frontend y con la consola ingresar el comando npm i.
+11. Dentro de la misma carpeta frontend se debe ingresar el compando npm start.
